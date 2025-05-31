@@ -2,10 +2,9 @@ const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
 
+const express = require("express");
 const app = express();
-app.use(cors());
-
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const API_KEY = "41e1be9067906078a5376f1461823e5d";
 
 // Current weather by city
@@ -113,5 +112,5 @@ app.get("/forecast-by-coords", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
